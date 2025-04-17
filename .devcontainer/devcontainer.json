@@ -1,0 +1,38 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/cpp
+{
+	"name": "C++",
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"PKief.material-icon-theme",
+				"eamodio.gitlens",
+				"GitHub.github-vscode-theme"
+			]
+		}
+	},
+
+	"features": {
+		"ghcr.io/devcontainers/features/desktop-lite:1.2.5": {}
+	},
+
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+
+	"runArgs": ["--shm-size=1g"],
+	"forwardPorts": [6080],
+	"portsAttributes": {
+		"6080": {
+			"label": "desktop"
+		}
+	},
+
+	"remoteEnv": {
+		"VOLC_PATH": "/workspaces/VolcanicEngine",
+		"VOLC_RUNTIME": "/workspaces/VolcanicEngine/build/gmake2/Lava/bin/Runtime"
+	},
+
+	"remoteUser": "root"
+}
